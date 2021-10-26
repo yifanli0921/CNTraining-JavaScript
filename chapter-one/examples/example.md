@@ -14,13 +14,15 @@ console.log(a);
 ```
 
 ```js
-console.log(b); // 报错：Uncaught ReferenceError: Cannot access 'b' before initialization ==> 找不到b这个变量
+console.log(b); 
 let b = '我是b';
+// 报错：Uncaught ReferenceError: Cannot access 'b' before initialization ==> 找不到b这个变量
 ```
 
 ```js
-console.log(c); // 报错：Uncaught ReferenceError: Cannot access 'c' before initialization ==> 找不到c这个变量
+console.log(c); 
 const c = '我是c';
+// 报错：Uncaught ReferenceError: Cannot access 'c' before initialization ==> 找不到c这个变量
 ```
 
 #### 3
@@ -31,9 +33,9 @@ const c = '我是c';
     const c = '我是c';
 }
 
-console.log(a); // 我是a
-console.log(b); // 报错：Uncaught ReferenceError: b is not defined ==> 找不到b这个变量
-console.log(c); // 报错：Uncaught ReferenceError: c is not defined ==> 找不到c这个变量
+console.log(a); 
+console.log(b); 
+console.log(c); 
 ```
 
 #### 5 const 常量到底能不能被修改
@@ -65,7 +67,6 @@ const obj = {
 obj.name = 'world'; // 对象里的 name 属性可以被修改
 ```
 
-
 ## 作用域
 ```javascript
 
@@ -84,20 +85,20 @@ console.log(b);
 
 #### 作用域链
 ```javascript
-    var a = 1
+var a = 1
 
-    function fn1() {
-      var b = 2
+function fn1() {
+  var b = 2
 
-      function fn2() {
-        var c = 3
-        console.log(c)
-        console.log(b)
-        console.log(a)
-      }
-      fn2()
-    }
-    fn1()
+  function fn2() {
+    var c = 3
+    console.log(c)
+    console.log(b)
+    console.log(a)
+  }
+  fn2()
+}
+fn1()
 ```
 
 ## 闭包
@@ -128,6 +129,7 @@ result();         // 3
     console.log(obj2.name);
 ```
 
+![img.png](img.png)
 #### 模版字符串
 ```javascript
 
@@ -192,6 +194,18 @@ var obj2 = {
 var name = '全局的name属性';
 obj2.sayName();
 //以方法的形式调用，this是调用方法的对象
+```
+
+```javascript
+function Fun() {
+    console.log(this);
+    console.log(this.name);
+}
+
+var name = '全局的name属性';
+var f = new Fun();
+
+//以构造函数的形式调用
 ```
 
 
@@ -301,6 +315,6 @@ arr2.push('hello'); //往 arr2 里添加一部分内容
 console.log('arr1:' + arr1);
 console.log('arr2:' + arr2);
 
-//
+//新数组
 let arr2 = [...arr1]
 ```
